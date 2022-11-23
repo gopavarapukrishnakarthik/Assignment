@@ -19,10 +19,15 @@ aws cloudformation deploy \
   --template-file service.yml \
   --region us-west-1 \
   --parameter-overrides StackName=nodejs \
-                        ServiceName=characters \
-                        ListenerArn=arn:aws:elasticloadbalancing:us-east-1:209640446841:listener/app/empir-Publi-8P1LMMEYPQD3/259190f1dd5cf73d/cf0803942aa32eb2 \
-                        ImageUrl=209640446841.dkr.ecr.us-east-1.amazonaws.com/characters:v1 \
-                        Path=/api/characters* \
+                        ServiceName=App service \
+                        ListenerArn=arn:aws:elasticloadbalancing:us-west-1:209640446841:listener/app/empir-Publi-8P1LMMEYPQD3/259190f1dd5cf73d/cf0803942aa32eb2 \
+                        ImageUrl=209640446841.dkr.ecr.us-east-1.amazonaws.com/app:v1 \
+                        Path=* \
                         Priority=1
                         
-# go to output and You can fetch a URL from the service API using your browser or curl.                       
+# go to output and You can fetch a URL from the service API using your browser or curl.      
+
+
+# Add GITHUB for continuous intergation
+Go to github repository and actions tab.
+place the prepared aws.yml file and exicute to get start for Continuous integration.
